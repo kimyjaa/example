@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace = "userMapper">
+
+	<select id = "getUser" parameterType = "int"
+		resultType = "com.example.rest.UserVO">
+		SELECT * FROM USER WHERE id = #{id}
+	</select>
+	
+	
+	<select id = "getUserList" resultType = "com.example.rest.UserVO">
+		SELECT * FROM USER
+	</select>
+	
+	
+	<insert id = "insertUser" parameterType = "com.example.rest.UserVO">
+		INSERT INTO USER VALUES
+		( #{userName}, #{id}, #{age}, #{location} )
+	</insert>
+	
+	
+	<delete id = "deleteUser" parameterType = "int">
+		DELETE FROM USER WHERE id = #{id}
+	</delete>	
+	
+	<update id="updateUser" parameterType = "com.example.rest.UserVO">
+		UPDATE USER
+		SET 
+		
+		userName = #{userName}, 
+		age = #{age},
+		location = #{location},
+
+		WHERE id = #{id} 
+	</update>
+
+
+</mapper>
