@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.example.demo;
 
 public class UserVO {
 	public String userName;
